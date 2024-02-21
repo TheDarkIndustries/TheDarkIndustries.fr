@@ -1,0 +1,13 @@
+$TTL 3600
+@	IN SOA dns200.anycast.me. tech.ovh.net. (2024022103 86400 3600 3600000 60)
+        IN NS     dns200.anycast.me.
+        IN NS     ns200.anycast.me.
+        IN MX     100 mx3.mail.ovh.net.
+        IN MX     1 mx1.mail.ovh.net.
+        IN MX     5 mx2.mail.ovh.net.
+        IN A      213.186.33.5
+    600 IN TXT    "v=spf1 include:mx.ovh.com -all"
+        IN TXT    "1|www.thedarkindustries.fr"
+ftp        IN CNAME  thedarkindustries.fr.
+www        IN A      213.186.33.5
+www        IN TXT    "3|welcome"
