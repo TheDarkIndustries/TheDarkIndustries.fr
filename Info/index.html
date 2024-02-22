@@ -12,6 +12,34 @@
 		<p>Essai de transfert d'information	!</p>
 		<p>Bonjour</p>
 		<link rel="icon" type="image/jpg" href="/Waiting/TheDarkIndustries.jpg">
+		<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+</head>
+<body>
+    <h1>Page 1</h1>
+    <form id="myForm" onsubmit="submitForm(event)">
+        <label for="phrase">Entrez une phrase :</label><br>
+        <input type="text" id="phrase" name="phrase"><br><br>
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Empêche le formulaire de se soumettre normalement
+
+            // Récupérer la valeur saisie dans le champ de texte
+            var phrase = document.getElementById("phrase").value;
+
+            // Redirection vers la deuxième page avec la phrase comme paramètre de requête
+            window.location.href = "page2.html?phrase=" + encodeURIComponent(phrase);
+        }
+    </script>
+</body>
+</html>
 	</body>
 </html>
 	
