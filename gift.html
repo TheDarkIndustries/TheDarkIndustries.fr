@@ -19,16 +19,21 @@
         <button type="submit">Envoyer</button>
     </form>
 
-    <script>
-        function submitForm(event) {
-            event.preventDefault(); // Empêche le formulaire de se soumettre normalement
-
-            // Récupérer la valeur saisie dans le champ de texte
-            var phrase = document.getElementById("phrase").value;
-
-            // Redirection vers la deuxième page avec la phrase comme paramètre de requête
-            window.location.href = "page2.html?phrase=" + encodeURIComponent(phrase);
+        <script>
+        // Fonction pour récupérer la valeur du paramètre de requête dans l'URL
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[[]]/g, "\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/+/g, " "));
         }
+
+        // Récupérer la phrase de la requête et l'afficher
+        var phrase = getParameterByName('phrase');
+        document.getElementById('phraseDisplay').textContent = phrase;
     </script>
 </body>
 </html>
