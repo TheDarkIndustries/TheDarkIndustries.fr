@@ -4,31 +4,33 @@
 	<!-- pour navigateur-->
 		<title>Joyeux anniverssaire Bro</title>
 		<meta charset ="utf8" />
+		<link rel="stylesheet" href="/Waiting/Style/TheDarkStyle.css"/>
 	</head>
 	<body>
 		<h1 class = "Titre">JOYEUX ANNIVERSAIRE MON REUF !!!</h1>
 		<h2 class = "important">Tu as vu ça c'est beau ici ?</h2>
 		<h3 class = "affiche">tu es pas mal la dessus nan ?</h3>
 		<p>Essai de transfert d'information	!</p>
-		<p>Bonjour</p>
-		<link rel="icon" type="image/jpg" href="/Waiting/TheDarkIndustries.jpg">
+		<p>Bonjour</p><p id="phraseDisplay"></p>
+		<img src="/Waiting/image/TheDarkIndustries.jpg" alt="Notre logo qui est sensé s'afficher"/>
+		
 
         <script>
         // Fonction pour récupérer la valeur du paramètre de requête dans l'URL
         function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[[]]/g, "\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/+/g, " "));
-        }
+    if (!url) url = window.location.href;
+    name = name.replace(/\[\]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 
-        // Récupérer la phrase de la requête et l'afficher
-        var phrase = getParameterByName('phrase');
-        document.getElementById('phraseDisplay').textContent = phrase;
-		print(phrase)
+// Récupérer la phrase de la requête et l'afficher
+var phrase = getParameterByName('phrase');
+document.getElementById('phraseDisplay').textContent = phrase;
+
     </script> 
 </body>
 </html>
