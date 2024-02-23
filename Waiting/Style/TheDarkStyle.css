@@ -3,11 +3,16 @@ background-color : #CCCCFF;
 border-collapse : separate;
 font-family : normal;
 }
+
 p{
 	text-align : center;
 	font-family : normal;
 	font-syze : 28px ;
 }
+
+.TDI{
+	font-family: 'HFont';
+	src: url('../Font/BangLYCH-RH-I.ttf') format('truetype');
 
 h1{
 text-align : center;
