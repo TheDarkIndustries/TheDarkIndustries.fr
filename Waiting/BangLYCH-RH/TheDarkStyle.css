@@ -1,37 +1,16 @@
-body{
-background-color : #CCCCFF;
-border-collapse : separate;
-}
 
-h1{
-text-align : center;
-font-family : Arial,"Times New Roman",Verdana,serif;
-color : blue;	/* #0000FF */
-}
-
-h2{
-font-style : italic;
-font-family : Arial Black;
-color : red;
-}
-
-h4{
-	color : maroon;
-	text-align : center;
-	font-weight : normal;
-}
-
-strong{
-color : green;
-text-decoration : blink;
-}
-
-
-img{
-	float : left;
-	padding-right : 25px;
-}
-
+	@font-face {
+		font-family: 'MCFont';							/* Name of the Fonts. Can be Customisable. */
+		src: url('../Font/BangLYCH-RH-I.ttf') format('truetype');		/* Source of the .ttf (the Font format)*/
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	/* Fonts usable for Minecraft Font : 'Minecraftia' , 'MCFont' , 'MC' */
+	
+	.HorrorFont {
+		font-family: 'HorrorFont';
+	}
 
 
 
