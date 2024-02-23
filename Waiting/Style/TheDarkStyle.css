@@ -27,12 +27,12 @@ p{
 	font-family: 'JandaHideAndSeek';
 	font-size : 28px ;
 	text-align : center;
-	bold : 600;
+	font-weight : 600;
 }
 
 .myform{
 	text-align : center;
-	bold : 600;
+	font-weight : 600;
 }
 
 h1{
