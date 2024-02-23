@@ -30,10 +30,12 @@ p{
 	bold : 600;
 }
 
+.myform{
+	text-align : center;
+}
 
 h1{
 text-align : center;
-font-family : Polya;
 color : blue;	/* #0000FF */
 }
 
