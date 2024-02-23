@@ -3,6 +3,9 @@ background-color : #CCCCFF;
 border-collapse : separate;
 font-family : normal
 }
+p{
+	text-align : center;
+}
 
 h1{
 text-align : center;
