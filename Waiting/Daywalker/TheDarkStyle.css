@@ -1,0 +1,17 @@
+	@font-face {
+		font-family: 'Daywalker';							/* Name of the Fonts. Can be Customisable. */
+		src: url('../Font/Daywalker.ttf') format('truetype');		/* Source of the .ttf (the Font format)*/
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	/* Fonts usable for Minecraft Font : 'Minecraftia' , 'MCFont' , 'MC' */
+	
+	.Daywalker {
+		font-family: 'Daywalker';
+	}
+
+
+
+
+
