@@ -68,12 +68,6 @@ font-family : Arial Black;
 color : red;
 }
 
-
-img{
-	float : left;
-	padding-right : 25px;
-}
-
 .D{
 	object-position: 50% 50%;
 	top: -125px;
