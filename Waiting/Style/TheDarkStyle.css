@@ -33,15 +33,11 @@ p{
 .tipe{
 	font-family: 'JandaHideAndSeek';
 	font-size : 28px ;
-	text-align : center;
-	font-weight : 900;
+
 }
 
 .myform{
 	text-align : center;
-	font-weight : 900;
-	margin-left: auto;
-   	margin-right: auto;
 }
 
 form{
