@@ -80,11 +80,13 @@ HD{
 }
 HD2{
 	position: relative;
+	width: 300px;
 	top: -85px;
 	right: 200px;
 }
 DD2{
 	position: relative;
+	width: 300px;
 	top: -85px;
 	left: 200px;
 
