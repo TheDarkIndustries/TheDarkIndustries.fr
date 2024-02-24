@@ -46,6 +46,13 @@ form{
 	text-align: center;
 }
 
+label{
+	font-family: 'JandaHideAndSeek';
+	font-size : 28px ;
+	text-align : center;
+	font-weight : 900;
+}
+
 h1{
 text-align : center;
 color : blue;	/* #0000FF */
