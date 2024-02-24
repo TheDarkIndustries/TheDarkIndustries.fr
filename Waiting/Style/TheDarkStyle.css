@@ -17,6 +17,11 @@ p{
 	
 }
 
+.Titre{
+	font-family: 'SuicideSquad';
+	font-size : 72px ;
+	color : black;
+
 .affiche{
 	font-family: 'Daywalker';
 	font-size : 28px ;
