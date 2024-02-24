@@ -75,21 +75,18 @@ img{
 }
 
 .D{
-	position: relative;
 	object-position: 50% 50%;
 	top: -125px;
 	right: 200px;
 }
 
 .HD{
-	position: relative;
 	object-position: 50% 0%;
 	top: -125px;
 	right: 200px;
 }
 
 .HD2{
-	position: relative;
 	object-position: right top;
 	width: 300px;
 	top: -85px;
@@ -97,7 +94,6 @@ img{
 }
 
 .DD2{
-	position: relative;
 	object-position: left top;
 	width: 300px;
 	top: -85px;
