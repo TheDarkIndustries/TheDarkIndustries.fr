@@ -42,6 +42,10 @@ p{
    	margin-right: auto;
 }
 
+form{
+	text-align: center;
+}
+
 h1{
 text-align : center;
 color : blue;	/* #0000FF */
@@ -51,17 +55,6 @@ h2{
 font-style : italic;
 font-family : Arial Black;
 color : red;
-}
-
-h4{
-	color : maroon;
-	text-align : center;
-	font-weight : normal;
-}
-
-strong{
-color : green;
-text-decoration : blink;
 }
 
 
