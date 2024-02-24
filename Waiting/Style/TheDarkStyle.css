@@ -4,6 +4,10 @@ border-collapse : separate;
 font-family : normal;
 }
 
+.important{
+	font-family: 'MC';
+	font-size : 48px ;
+	text-align: center;
 p{
 	text-align : center;
 	font-family : normal;
