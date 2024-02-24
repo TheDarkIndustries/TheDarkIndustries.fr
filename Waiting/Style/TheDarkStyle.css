@@ -74,20 +74,29 @@ img{
 	padding-right : 25px;
 }
 
-HD{
+.D{
+	position: relative;
+	object-position: 50% 100%;
+	top: -125px;
+	right: 200px;
+}
+
+.HD{
 	position: relative;
 	object-position: 50% 0%;
 	top: -125px;
 	right: 200px;
 }
-HD2{
+
+.HD2{
 	position: relative;
 	object-position: 100% 0%;
 	width: 300px;
 	top: -85px;
 	right: 200px;
 }
-DD2{
+
+.DD2{
 	position: relative;
 	object-position: 0% 0%;
 	width: 300px;
