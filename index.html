@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheDark.Inc</title>
+  <style>
+    body {
+      margin: 0; /* Supprimer les marges par défaut */
+      padding: 0; /* Supprimer les paddings par défaut */
+      margin-bottom: 100px; /* Ajustement pour le footer */
+color: white;
+    }
+
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -100; /* Place l'image de fond derrière tout le contenu */
+    }
+	
+	 body.show-footer footer {
+      bottom: 0;
+    }
+  
+    /* Style de base pour la navbar */
+    .navbar {
+      position: fixed;
+      width: 100%;
+      background-color: rgba(51, 51, 51, 0.4); /* Couleur de fond avec une opacité de 0.1 */
+      overflow: hidden;
+      transition: top 0.3s; /* Ajout d'une transition pour un effet fluide */
+      text-align: center; /* Centrer les éléments de la navbar */
+    }
+
+    /* Style des liens dans la navbar */
+    .navbar a {
+      display: inline-block; /* Afficher les liens en ligne */
+      color: white; /* Couleur du texte en noir */
+      text-align: center; /* Centrer le texte */
+      padding: 14px 20px;
+      text-decoration: none;
+      font-family: "Arial", sans-serif; /* Police de caractères : font-family: 'Dancing Script', cursive Police de caractères Dancing Script */
+      font-weight: bold; /* Gras */
+      text-transform: uppercase; /* En majuscules */
+      letter-spacing: 1px; /* Espacement entre les lettres */
+    }
+
+    /* Changement de couleur du lien lorsqu'il est survolé */
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Ajout d'une marge au contenu pour éviter qu'il soit caché sous la navbar */
+    .content {
+      margin-top: 24px; /* Ajustez la marge selon la hauteur de votre navbar */
+      padding: 20px;
+    }
+
+    /* Style pour centrer le titre */
+    h1 {
+      text-align: center;
+    }
+	
+	/* Style pour le bas de page */
+    footer {
+      position: fixed;
+      bottom: -100px; /* Déplacez le footer hors de l'écran */
+      width: 100%;
+      background-color: #333; /* Couleur de fond */
+      padding: 20px 0;
+      text-align: center;
+      transition: bottom 0.5s ease; /* Ajoutez une transition douce */
+    }
+
+    footer p {
+margin: -18px;
+    color: white;
+    font-size: 14px;
+    margin-left: -81%;
+    }
+
+    /* Afficher le footer uniquement lorsque l'utilisateur fait défiler jusqu'en bas */
+    header {
+        /* Ajouter un espacement de 10 pixels autour du contenu à l'intérieur de l'en-tête */
+        padding: 10px;
+
+        /* Définir la hauteur de l'en-tête sur 40 pixels */
+        height: 40px;
+
+        /* Utiliser Flexbox pour créer un conteneur flexible pour le contenu de l'en-tête */
+        display: flex;
+
+        /* Répartir l'espace entre les éléments enfants dans le conteneur Flex */
+        justify-content: center; /* Centrer horizontalement */
+        align-items: center; /* Centrer verticalement */
+
+        /* Centrer le texte horizontalement à l'intérieur de l'en-tête */
+        text-align: center;
+    }
+
+    .social-icons {
+ display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: -14px;
+    margin-right: 1%;
+    }
+
+    .social-icons a {
+        display: inline-block;
+        margin: 0 3px;
+        text-decoration: none;
+    }
+
+    .social-icons img {
+        width: 40px; /* Ajustez la taille des icônes selon vos besoins */
+        height: 40px;
+        border-radius: 50%; /* Pour rendre les icônes circulaires, ajustez selon vos préférences */
+    }
+	
+.sections-container {
+    /* Utilisation de la grille CSS pour aligner les sections verticalement */
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne */
+    justify-content: center; /* Centrer les sections horizontalement */
+    gap: 20px; /* Espacement entre les sections */
+}
+
+
+
+.image-with-text {
+    width: 99%; /* Ajustez la largeur de l'image selon vos besoins */
+    height: 330px; /* Ajustez la hauteur de l'image selon vos besoins */
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.overlay {
+    width: 100%; /* Ajustez la largeur de l'overlay selon vos besoins */
+    height: 100%; /* Ajustez la hauteur de l'overlay selon vos besoins */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px; /* Ajustez le rembourrage de l'overlay selon vos besoins */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    color: white;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.text-content {
+    position: absolute;
+    top: 20%; /* Ajustez la position verticale du texte selon vos besoins */
+    left: 63%; /* Ajustez la position horizontale du texte selon vos besoins */
+}
+
+.text-content h1 {
+    margin-bottom: -100px; /* Ajustez l'espacement entre le titre et le paragraphe selon vos besoins */
+}
+
+ .alignement {
+            top: 427px; /* Ajustez cette valeur selon votre besoin */
+            right: 1100px; /* Ajustez cette valeur selon votre besoin */
+        }
+
+
+.image-with-text:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3, .overlay p {
+    margin: 114px;
+    text-align: right; /* Aligner le texte à droite */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Alignement vertical au centre */
+    margin-left: 20px; /* Ajouter une marge à gauche pour déplacer le contenu vers la droite */
+}
+
+.logo img {
+    width: 40px; /* Largeur de l'image */
+    height: 40px; /* Hauteur de l'image */
+    /* border-radius: 50%;  Rendre l'image ronde */
+    margin-left: -623px; /* Marge à droite pour séparer l'image du texte */
+}
+
+.try {
+margin-left: 570px;
+color: white;
+}
+
+ /* qui somme nous*/
+ 
+.about-us-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.about-us-text {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-text h3 {
+    margin-top: 20px;
+}
+
+.about-us-text p {
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin: 0 10px;
+}
+
+.about-us-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* acceuil */
+
+.welcome-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.welcome-title {
+    font-size: 36px;
+color: white;
+}
+
+.welcome-text {
+    font-size: 18px;
+color: white;
+    margin-top: 20px;
+}
+
+.cta-buttons {
+    margin-top: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-right: 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: black;
+}
+
+.quick-links {
+    margin-top: 50px;
+}
+
+.quick-links-title {
+    font-size: 24px;
+color: white;
+}
+
+.quick-links-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.quick-links-list li {
+    margin-bottom: 10px;
+}
+
+.quick-links-list li a {
+    text-decoration: none;
+color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.quick-links-list li a:hover {
+    color: color: white;
+}
+
+.quick-links {
+    margin-top: -50px;
+    text-align: center;
+}
+
+.quick-links-title {
+    font-size: 24px;
+color: white;
+    margin-bottom: 20px;
+}
+
+.quick-links-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links-list li {
+    margin-bottom: 15px;
+}
+
+.quick-links-list li a {
+    text-decoration: none;
+color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.quick-links-list li a:hover {
+color: white;
+}
+
+*/ Contact */
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.contact-info-item {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-info-item h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info-item p {
+    font-size: 18px;
+    color: #666;
+}
+
+.contact-form {
+    text-align: center;
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+
+*/--------------------*/
+
+.image-containerv2 {
+            display: inline-block;
+            overflow: hidden;
+    grid-template-columns: 1fr; /* Une seule colonne */
+    justify-content: center; /* Centrer les sections horizontalement */
+    gap: 20px; /* Espacement entre les sections */
+}
+
+.image-containerv2 {
+  display: inline-block;
+  overflow: hidden;
+  width: 15%;
+  height: 269px;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 2%;
+  border: 5px solid #171515; /* Add a yellow border */
+  border-radius: 10px; /* Round the corners */
+  background-color: rgba(24, 21, 21, 62%); /* Couleur de fond avec une opacité de 0.1(24 21 21 / 62%) */
+}
+
+.image-containerv2 img {
+  transition: transform 0.3s ease-in-out;
+  color-background: white;
+}
+
+.image-containerv2:hover img {
+  transform: scale(2.4);
+}
+
+.image-containerv2:hover img {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.image-with-textv2 img {
+margin-left: 20%;
+    margin-top: 11%;
+}
+
+
+.text-contentv2 {
+    position: absolute;
+top: 114%;
+    left: 5.4%;
+}
+
+ .alignementv2 {
+            top: 0px; /* Ajustez cette valeur selon votre besoin */
+            right: 0px; /* Ajustez cette valeur selon votre besoin */
+        }
+
+}
+  </style>
+</head>
+<body>
+    <div class="background">
+        <img src="head.jpeg" alt="Fond d'écran" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+<header>
+    <div class="logo">
+        <img src="OK.webp" alt="Logo" width="40" height="40">
+        <h1 class="try">TheDarkIndustries</h1>
+    </div>
+</header>
+
+
+    <div class="navbar" id="navbar">
+        <a href="#Accueil" onclick="showContent('Accueil')">Accueil</a>
+        <a href="#Jeux-video" onclick="showContent('Jeux-video')">Jeux-video</a>
+        <a href="#En préparation" onclick="showContent('En préparation')">En préparation</a>
+        <a href="#Proposition" onclick="showContent('Proposition')">Proposition</a>
+        <a href="#Contact" onclick="showContent('Contact')">Contact</a>
+		<a href="#Qui sommes-nous ?" onclick="showContent('Qui sommes-nous ?')">Qui sommes-nous ?</a>
+    </div>
+
+    <!-- Contenu de la page -->
+<div class="content" id="Accueil">
+    <div class="welcome-section">
+        <h2 class="welcome-title">Bienvenue sur TheDarkIndustries</h2>
+        <p class="welcome-text">Découvrez notre univers créatif où l'imagination prend vie. Que vous soyez passionné de jeux vidéo, de films ou de design, vous êtes au bon endroit.</p>
+        <div class="cta-buttons">
+            <a href="#Jeux-video" class="cta-button" onclick="showContent('Jeux-video')">Découvrir nos jeux vidéo</a>
+            <a href="#En préparation" class="cta-button" onclick="showContent('En préparation')">Projets en préparation</a>
+        </div>
+		</div>
+    <div class="quick-links">
+    <h3 class="quick-links-title">Accès Rapide :</h3>
+    <ul class="quick-links-list">
+        <li><a href="#Jeux-video" onclick="showContent('Jeux-video')">Jeux Vidéo</a></li>
+        <li><a href="#En préparation" onclick="showContent('En préparation')">Projets en Préparation</a></li>
+        <li><a href="#Proposition" onclick="showContent('Proposition')">Proposition</a></li>
+        <li><a href="#Contact" onclick="showContent('Contact')">Contact</a></li>
+        <li><a href="#Qui sommes-nous ?" onclick="showContent('Qui sommes-nous ?')">Qui Sommes-Nous ?</a></li>
+    </ul>
+</div>
+</div>
+
+
+    <div class="content" id="Jeux-video">
+        <h2>Jeux-video</h2>
+        <p>Contenu de votre page Jeux-video...</p>
+    </div>
+
+
+	<div class="content" id="En préparation">
+<!-- Titre "Prototypes" avec style -->
+    <h2 style="text-align: center; margin-top: 50px; font-size: 36px;">Prototypes</h2>
+    <!-- Conteneur pour les sections -->
+    <div class="sections-container">
+        <!-- Première section -->
+            <!-- Image avec texte superposé -->
+            <div class="image-with-text">
+			<img src="the_dark_stone.webp" alt="Image">
+			<!-- Overlay pour le texte -->
+			<div class="overlay">
+			<!-- Texte à l'intérieur de l'overlay -->
+			<div class="text-content">
+            <h1>Synopsis</h1>
+            <p>THE DARK STONE</p>
+			<h4 class="alignement">Créateur : Duwoye Jordan - Claire - Champlon Lucas</h4>
+        </div>
+    </div>
+</div>
+
+	</div>
+	    <div class="image-containerv2">
+			<div class="image-with-textv2">
+				<img src="PP.webp" alt="Imagev2" id="imagev2">
+  <!-- Overlay pour le texte -->
+				<div class="overlayv2">
+					<p><h2>  <!-- Overlay pour le texte --></h2></p>
+					</div>
+				</div>
+				<div class="text-contentv2">
+			<h4 class="alignementv2">Perso principal </h4>
+        </div>
+			</div>
+				
+        <!-- Ajoutez quatre autres sections similaires ici -->
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+</div>
+
+
+    <div class="content" id="Proposition">
+        <h2>Proposition</h2>
+        <p>Contenu de votre Proposition...</p>
+    </div>
+
+<div class="content" id="Contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+        <div class="contact-info-item">
+            <h3>Adresse :</h3>
+            <p>123 Rue de la Paix<br>Ville, Pays<br>Code Postal</p>
+        </div>
+        <div class="contact-info-item">
+            <h3>Numéro de Téléphone :</h3>
+            <p>+01 234 567 890</p>
+        </div>
+        <div class="contact-info-item">
+            <h3>Email :</h3>
+            <p>lemoine.bryan70@gmail.com</p>
+        </div>
+    </div>
+    <div class="contact-form">
+        <h3>Envoyez-nous un message :</h3>
+<form action="mailto:lemoine.bryan70@gmail.com" method="post" enctype="text/plain">
+    <label for="email">Votre adresse e-mail:</label><br>
+    <input type="email" id="email" name="email" required><br>
+    <label for="subject">Sujet:</label><br>
+    <input type="text" id="subject" name="subject" required><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+    <input type="submit" value="Envoyer">
+</form>
+    </div>
+</div>
+
+	
+	<div class="content" id="Qui sommes-nous ?">
+    <h2 style="text-align: center; margin-top: 50px; font-size: 36px;">Qui sommes-nous ?</h2>
+    <div class="about-us-container">
+        <div class="about-us-text">
+            <h3>Notre Histoire</h3>
+            <p>Nous sommes une équipe passionnée, dédiée à créer des expériences incroyables dans le monde des jeux vidéo. Notre parcours a commencé il y a plusieurs années avec une simple idée : offrir aux joueurs une immersion totale dans des univers fantastiques et captivants.</p>
+            <h3>Nos Valeurs</h3>
+            <p>Notre travail est guidé par des valeurs fortes : l'innovation, la créativité et l'intégrité. Nous croyons fermement que chaque jeu que nous créons devrait repousser les limites de l'imagination tout en offrant une expérience de jeu exceptionnelle.</p>
+            <h3>Nos Réseaux Sociaux</h3>
+            <div class="social-icons">
+                <a href="lien_vers_page_facebook" target="_blank"><img src="F.jpg" alt="Facebook"></a>
+                <a href="lien_vers_page_twitter" target="_blank"><img src="X.jpg" alt="Twitter"></a>
+                <a href="lien_vers_page_instagram" target="_blank"><img src="insta.jpg" alt="Instagram"></a>
+                <!-- Ajoutez d'autres liens et icônes au besoin -->
+            </div>
+        </div>
+        <div class="about-us-image">
+            <img src="OK.webp" alt="About Us Image">
+        </div>
+    </div>
+</div>
+
+
+    <!-- Bas de page -->
+<footer>
+  <div class="social-icons">
+    <a href="lien_vers_profil_facebook" target="_blank"><img src="F.jpg" alt="Facebook"></a>
+    <a href="lien_vers_profil_insta" target="_blank"><img src="insta.jpg" alt="Instagram"></a>
+    <a href="lien_vers_profil_twitter" target="_blank"><img src="X.jpg" alt="Twitter"></a>
+    <!-- Ajoutez d'autres liens et icônes au besoin -->
+  </div>
+  <p class="advertisement">Page web générée par <a href="ok" target="_blank">CCS - CodeCraft Studio</a> - 2024</p>
+</footer>
+
+
+    <script>
+        // JavaScript pour afficher le footer lorsque l'utilisateur fait défiler jusqu'en bas
+        // JavaScript pour afficher le footer lorsque l'utilisateur fait défiler jusqu'en bas
+  window.onscroll = function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      document.body.classList.add('show-footer');
+    } else {
+      document.body.classList.remove('show-footer');
+    }
+
+            // Récupérer la navbar
+            var navbar = document.getElementById("navbar");
+
+            // Si le défilement est supérieur à 50px de la page
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                navbar.style.top = "0"; // Afficher la navbar en haut de la page
+            } else {
+                navbar.style.top = "60px"; // Déplacer la navbar en-dessous du titre
+            }
+        };
+
+        function showContent(id) {
+            // Cacher tous les contenus
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none';
+            }
+            // Afficher le contenu correspondant à l'ID
+            document.getElementById(id).style.display = 'block';
+        }
+
+        // Afficher automatiquement la section du menu lors du chargement de la page
+        window.onload = function() {
+            showContent('Accueil');
+        };
+
+// Add a glow effect to the image on hover
+const imagev2 = document.getElementById("imagev2");
+
+imagev2.addEventListener("mouseover", () => {
+  imagev2.style.filter = "drop-shadow(0 0 200px #ffffff)";
+});
+
+imagev2.addEventListener("mouseout", () => {
+  imagev2.style.filter = "";
+});
+    </script>
+
+</body>
+</html>
