@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	<!-- pour navigateur-->
+		<title>Joyeux anniverssaire Bro</title>
+		<meta charset ="utf8" />
+	</head>
+	<body>
+		<h1 class = "Titre">JOYEUX ANNIVERSAIRE MON REUF !!!</h1>
+		<h2 class = "important">Tu as vu ça c'est beau ici ?</h2>
+		<h3 class = "affiche">tu es pas mal la dessus nan ?</h3>
+		<p>Essai de transfert d'information	!</p>
+		<p>Bonjour</p>
+		<link rel="icon" type="image/jpg" href="/Waiting/TheDarkIndustries.jpg">
+
+    <form id="myForm" onsubmit="submitForm(event)">
+        <label for="phrase">Entrez une phrase :</label><br>
+        <input type="text" id="phrase" name="phrase"><br><br>
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Empêche le formulaire de se soumettre normalement
+
+            // Récupérer la valeur saisie dans le champ de texte
+            var phrase = document.getElementById("phrase").value;
+
+            // Redirection vers la deuxième page avec la phrase comme paramètre de requête
+            window.location.href = "page2.html?phrase=" + encodeURIComponent(phrase);
+        }
+    </script>
+</body>
+</html>
+	</body>
+</html>
+	
