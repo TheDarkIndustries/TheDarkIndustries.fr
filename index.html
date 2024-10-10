@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Site</title>
+    <style>
+	
+		@font-face {
+    font-family: 'Ghoulish';
+    src: url('fonts/Ghoulish.ttf') format('truetype');
+}
+	
+		body {
+    font-family: 'Ghoulish', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+		.background {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -100; /* Place l'image de fond derrière tout le contenu */
+		}
+
+    header {
+    background-color: #3330;
+    color: white;
+    padding: 20px 0; /* Augmenter le padding pour donner de l'espace au titre */
+    position: relative;
+    z-index: 500; /* Assurez-vous que le header est au-dessus du reste du contenu */
+    text-align: center; /* Centrer le contenu du header */
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.header-top img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header-top h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    top: 81px; /* Position initiale de la navbar */
+    left: 0;
+    width: 100%;
+    background-color: #444;
+    padding: 10px 0;
+    transition: top 0.3s ease-in-out; /* Transition pour le déplacement */
+    z-index: 1000; /* Assurez-vous que la navbar est au-dessus du reste du contenu */
+}
+
+nav.scrolled {
+    top: 0; /* Position de la navbar lorsqu'on fait défiler la page */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+main {
+    padding: 80px 20px 20px; /* Ajuster le padding-top pour faire de la place pour la navbar fixe */
+}
+
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+        }
+
+        .presentation {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .recent-articles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .recent-articles article {
+            width: 30%;
+            background-color: #28282863;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .recent-articles article h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer .social-media {
+            margin-top: 10px;
+        }
+
+        footer .social-media a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer .social-media a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background">
+        <img src="head1.jpeg" alt="Fond d'écran" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <header>
+        <div class="header-top">
+            <img src="OK.webp" alt="Logo">
+            <h1>The Dark Industries</h1>
+        </div>
+        <nav>
+            <a href="index.html"><u>Accueil</u></a>
+            <a href="jeux-video.html">Jeux-video</a>
+            <a href="en-preparation.html">En preparation</a>
+            <a href="proposition.html">Proposition</a>
+            <a href="contact.html">Contact</a>
+            <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+        </nav>
+    <main>
+        <section class="carousel">
+            <div class="carousel-slide">
+                <img src="discord.png" alt="Image 1">
+				<img src="r.png" alt="">
+				<img src="discord.png" alt="Image 1">
+				<img src="r.png" alt="">
+				<img src="discord.png" alt="Image 1">
+            </div>
+        </section>
+
+        <section class="presentation">
+            <h2>Bienvenue chez TheDarkIndustries</h2>
+            <p>Chez TheDarkIndustries, nous sommes passionnes par les technologies et les jeux video. Decouvrez nos projets en cours, nos propositions et entrez en contact avec notre equipe pour en savoir plus.</p>
+        </section>
+
+        <section class="recent-articles">
+            <h2>Articles recents :</h2>
+            <article>
+                <h3>Derniere mise-a-jour Jeux-Video</h3>
+                <p>Resume de l'article 1...</p>
+                <a href="#">Lire la suite</a>
+            </article>
+            <article>
+                <h3>Derniere mise-a-jour en preparation</h3>
+                <p>Resume de l'article 2...</p>
+                <a href="#">Lire la suite</a>
+            </article>
+            <article>
+                <h3>Derniere mise-a-jour des propositions</h3>
+                <p>Resume de l'article 3...</p>
+                <a href="#">Lire la suite</a>
+            </article>
+			<article>
+                <h3>Derniere mise-a-jour du site</h3>
+                <p>Resume de l'article 4...</p>
+                <a href="#">Lire la suite</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TheDarkIndustries. Tous droits reserves.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+			<a href="https://discord.gg/TXz7TXPEyU">Discord</a>
+        </div>
+		Page web generee par <a href="ok" target="_blank">CCS - CodeCraft Studio</a>
+    </footer>
+
+  <script>
+        let navbar = document.getElementById('navbar');
+        let header = document.querySelector('header');
+        let headerHeight = header.offsetHeight;
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > headerHeight) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Pour s'assurer que la navbar est correctement positionnée dès le chargement
+        if (window.scrollY > headerHeight) {
+            navbar.classList.add('scrolled');
+        }
+    </script>
+</body>
+</html>
