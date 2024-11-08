@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheDarkIndustries</title>
+    <style>
+        /* Style global */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+        }
+		   .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -100; /* Place l'image de fond derrière tout le contenu */
+    }
+
+        /* En-tête 
+        header {
+            text-align: center;
+            padding: 1em;
+            font-size: 2em;
+            font-weight: bold;
+        }*/
+header {
+    /* Ajouter un espacement de 10 pixels autour du contenu à l'intérieur de l'en-tête */
+    padding: 10px;
+
+    /* Définir la hauteur de l'en-tête sur 40 pixels */
+    height: 40px;
+
+    /* Utiliser Flexbox pour créer un conteneur flexible pour le contenu de l'en-tête */
+    display: flex;
+
+    /* Répartir l'espace entre les éléments enfants dans le conteneur Flex */
+    justify-content: space-between; /* Sépare les éléments sur toute la largeur */
+    align-items: center; /* Centrer verticalement */
+
+    /* Centrer le texte horizontalement à l'intérieur de l'en-tête */
+    text-align: center;
+
+
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Alignement vertical au centre */
+}
+
+.logo img {
+    width: 40px; /* Largeur de l'image */
+    height: 40px; /* Hauteur de l'image */
+    margin-right: 10px; /* Espace entre le logo et le bord droit */
+}
+
+.try {
+    margin: 0 auto; /* Centre l'élément horizontalement */
+    color: white;
+    font-size: 1.5em;
+}
+
+		
+		
+
+        /* Barre de navigation */
+        nav {
+            background-color: #3333336b;
+            text-align: center;
+            padding: 0.5em 0;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* Sections de contenu */
+        section {
+            display: none;
+            padding: 2em;
+            animation: fadeIn 1s ease;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Animation d’apparition */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Bouton et texte d'accueil */
+        .intro {
+            text-align: center;
+            margin: 2em 0;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+        }
+
+        .btn-group {
+            text-align: center;
+            margin-top: 1em;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            margin: 0 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        /* Style de la liste déroulante dans "En Préparation" */
+        .dropdown {
+            display: none;
+            margin-top: 1em;
+            text-align: center;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 8px 0;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Style des liens de contact */
+        .contact-link {
+            display: flex;
+            align-items: center;
+            margin: 1em 0;
+        }
+
+        .contact-link img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .formulaire {
+            background-color: #1c1c1c;
+            padding: 1em;
+            border-radius: 5px;
+            text-align: center;
+            margin: 1em auto;
+            width: 80%;
+        }
+/* Contact */
+		.container {
+            /*width: 300px;*/
+            background-color: #2a2c2d;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+			width: 50%; /* largeur nécessaire pour que le centrage fonctionne */
+    margin: 0 auto;
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+        .app-title {
+            font-size: 24px;
+            margin: 0;
+            color: #ffffff;
+        }
+        .app-developer {
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .app-description {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .install-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2a2c2d;
+            color: #2a2c2d;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 3.3s;
+        }
+        .install-btn:hover {
+            background-color: #ffffff;
+        }
+		
+		
+		/*QUI SOMME NOUS*/
+		
+		
+		.content {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+
+        .about-us-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            background: #333333;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+            padding: 20px;
+            transform: translateY(10px); /* Décalage pour l'effet de montée */
+            animation: liftIn 1s ease forwards;
+        }
+
+        .about-us-text {
+            flex: 1;
+            padding: 20px;
+            opacity: 0;
+            animation: textSlideIn 1s forwards 0.5s; /* Animation de texte avec délai */
+            transform: translateY(20px); /* Pour l'animation d'entrée */
+        }
+
+        .about-us-image {
+            flex: 1;
+            text-align: center;
+            animation: rotateImage 4s infinite linear; /* Rotation continue de l'image */
+        }
+
+        .about-us-image img {
+            width: 70%;
+            height: auto;
+            opacity: 1;
+            animation: imageFadeIn 1s forwards 1s; /* Légère apparition retardée */
+            transform: scale(0.9); /* Effet de zoom à l'apparition */
+            animation: zoomIn 1s forwards 1s; /* Animation de zoom */
+			 border-radius: 50%;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+            transition: transform 0.3s, color 0.3s; /* Transition de couleur et de transformation */
+        }
+
+        .social-icons img {
+            width: 40px; /* Agrandissement des icônes */
+            height: 40px;
+            transition: transform 0.3s;
+			border-radius: 20%;
+        }
+
+        .social-icons a:hover img {
+            transform: scale(1.2) rotate(15deg); /* Effet de rotation et d'agrandissement au survol */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes liftIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes textSlideIn {
+            from { transform: translateX(-50%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes imageFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); }
+            to { transform: scale(1); }
+        }
+
+/* Style pour le bas de page */
+    footer {
+      position: fixed;
+      bottom: -100px; /* Déplacez le footer hors de l'écran */
+      width: 100%;
+      background-color: #333; /* Couleur de fond */
+      padding: 20px 0;
+      text-align: center;
+      transition: bottom 0.5s ease; /* Ajoutez une transition douce */
+    }
+
+    footer p {
+margin: -18px;
+    color: white;
+    font-size: 14px;
+    margin-left: -81%;
+    }
+	
+       /*PREPA*/
+	   
+	           .sections-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center images */
+            gap: 20px; /* Space between images */
+        }
+        .image-with-text {
+            position: relative;
+            width: 400px; /* Increased width for Synopsis */
+            height: 300px; /* Increased height for Synopsis */
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            cursor: pointer; /* Pointer on hover */
+        }
+        .image-with-text img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+            color: white; /* Ensure text color is white */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .image-with-text:hover .overlay {
+            opacity: 1;
+        }
+        .text-content {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white; /* Text color for synopsis */
+        }
+        h1, h2 {
+            margin: 0;
+            padding: 5px;
+            color: white; /* Ensure headings are white */
+        }
+        /* Styles for other images */
+        .image-with-textv2 {
+            position: relative;
+            width: 300px; /* Original size for other images */
+            height: 200px; /* Original size for other images */
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            cursor: pointer; /* Pointer on hover */
+        }
+        .image-with-textv2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .overlayv2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+            color: white; /* Ensure text color is white */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .image-with-textv2:hover .overlayv2 {
+            opacity: 1;
+        }
+        .text111 {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white; /* Text color for other overlays */
+        }
+        /* Responsive text */
+        @media (max-width: 600px) {
+            .image-with-text, .image-with-textv2 {
+                width: 90%; /* Full width on small screens */
+                height: auto; /* Auto height */
+            }
+        }
+    </style>
+    <script>
+        // Fonction pour gérer l'onglet actif
+        function showSection(id) {
+            document.querySelectorAll('section').forEach((section) => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+
+        // Fonction pour afficher la liste déroulante
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+<div class="background">
+        <img src="head1.jpeg" alt="Fond d'écran" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+<!-- En-tête -->
+<header> 
+    <div class="logo">
+        <img src="OK.webp" alt="Logo" width="40" height="40">
+    </div>
+    <h1 class="try">TheDarkIndustries</h1>
+</header>
+
+
+<!-- Barre de navigation -->
+<nav>
+    <a href="#" onclick="showSection('accueil')">Accueil</a>
+	<a href="#" onclick="showSection('qui-sommes-nous')">Qui Sommes Nous ?</a>
+    <a href="#" onclick="showSection('jeux-videos')">Jeux Vidéo</a>
+    <a href="#" onclick="showSection('en-preparation')">En Préparation</a>
+    <a href="#" onclick="showSection('proposition')">Proposition</a>
+    <a href="#" onclick="showSection('contact')">Contact</a>
+    
+</nav>
+
+<!-- Section Accueil -->
+<section id="accueil" class="active">
+    <div class="intro">
+        <h1>Bienvenue sur TheDarkIndustries</h1>
+        <p>Découvrez notre univers créatif où l'imagination prend vie. Que vous soyez passionné de jeux vidéo, de films ou de design, vous êtes au bon endroit.</p>
+        <div class="btn-group">
+            <button class="btn" onclick="showSection('jeux-videos')">Découvrir nos jeux vidéo</button>
+            <button class="btn" onclick="showSection('en-preparation')">Projets en préparation</button>
+        </div>
+    </div>
+</section>
+
+<!-- Section En Préparation -->
+<section id="en-preparation">
+    <button class="btn" onclick="toggleDropdown()">Voir les projets en préparation</button>
+    <div id="dropdown" class="dropdown">
+        <a href="#">The Dark Stone</a>
+        <a href="#">What is Inside</a>
+        <a href="#">Visual Novel</a>
+        <a href="#">In comming...</a>
+    </div>
+	
+	<div class="content" id="En préparation">
+        <h2>Prototypes</h2><br><br>
+        <div class="sections-container">
+            <div class="image-with-text">
+                <img src="the_dark_stone.webp" alt="The Dark Stone">
+                <div class="overlay">
+                    <div class="text-content">
+                        <h1>Synopsis</h1>
+                        <p>THE DARK STONE</p>
+                        <h4 class="alignement">Créateur : Duwoye Jordan - Claire - Champlon Lucas</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-containerv2">
+                <div class="image-with-textv2">
+                    <img src="PP.webp" alt="Personnage principal">
+                    <div class="text111">Perso principal</div>
+                    <div class="overlayv2">
+                        <h2>Perso principal</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-containerv2">
+                <div class="image-with-textv2">
+                    <img src="Monstre_crabe_de_base.png" alt="Mob">
+                    <div class="text111">Mob</div>
+                    <div class="overlayv2">
+                        <h2>Mob</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-containerv2">
+                <div class="image-with-textv2">
+                    <img src="epee.png" alt="Armes">
+                    <div class="text111">Armes</div>
+                    <div class="overlayv2">
+                        <h2>Armes</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-containerv2">
+                <div class="image-with-textv2">
+                    <img src="Pierre_.png" alt="Accessoires/items">
+                    <div class="text111">Accessoire/items</div>
+                    <div class="overlayv2">
+                        <h2>Accessoire/items</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Contact -->
+<section id="contact">
+<div class="container">
+        <img src="OK.webp" alt="App Icon" class="app-icon">
+        <h1 class="app-title">TheDarkIndustries</h1>
+        <!--<p class="app-developer">Développeur: Dev Inc.</p>-->
+        
+		<p class="app-description">Bonjour à toutes et à tous,</p> <p class="app-description"> Nous avons le plaisir de vous présenter notre serveur Discord, un espace où nous serons très actifs et où nous partagerons régulièrement des informations sur les nouveautés de nos jeux ainsi que sur l’évolution de nos projets. Ce serveur a également pour but de rassembler une communauté grandissante pour profiter ensemble de nos activités. </p> <p class="app-description"> Nous en sommes encore à la phase de lancement, et bien que nous ne puissions pas encore nous y consacrer à plein temps, nous avançons progressivement. Nous nous excusons pour les éléments qui ne sont pas encore finalisés, mais soyez assurés que des améliorations arrivent petit à petit. Si notre parcours et nos projets vous intéressent, ou si vous voulez simplement vous divertir avec nous, rejoignez-nous sur le serveur 😉. </p> <p class="app-description"> À mesure que nos projets prendront de l’ampleur, nous organiserons des concours pour offrir des places exclusives à nos futurs bêtatesteurs. </p> <p class="app-description"> Vous avez sûrement remarqué que nous souhaitons également mettre en avant notre chaîne Twitch ! En effet, il s’agit de notre moyen d’interaction le plus direct avec vous. Nous y proposons du contenu divertissant en jouant aux jeux qui nous passionnent, alors n’hésitez pas à passer voir un live ou deux, ça nous fera plaisir 😉. </p> <p class="app-description"> Enfin, si vous ne pouvez pas assister aux lives, sachez que les rediffusions seront disponibles sur notre chaîne YouTube. Vous y trouverez aussi peut-être quelques extraits en short de nos meilleurs moments en direct (bien que ceux-ci soient publiés un peu moins régulièrement). </p>
+		
+        <button class="install-btn" onclick="installApp()">
+			<div class="contact-link">
+			<img src="https://img.icons8.com/color/48/discord-logo.png" alt="Discord">
+			<a href="https://discord.gg/RApu4wYFkU" target="_blank">Rejoignez notre serveur Discord</a>
+			</div>
+			
+			<div class="contact-link">
+			<img src="https://img.icons8.com/ios-filled/50/twitch.png" alt="Twitch">
+			<a href="https://www.twitch.tv/the_dark_industries" target="_blank">Suivez-nous sur Twitch</a>
+			</div>
+			
+			<div class="contact-link">
+			<img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube">
+			<a href="https://youtube.com/@tdi666?si=DUlpK0IwASQfwXc7" target="_blank">Notre chaîne YouTube</a>
+			</div>
+	</button>
+    </div>
+
+    <!--<p>Bonjour à toutes et à tous,</p>
+    <p>
+        On vous présente notre serveur Discord où nous serons les plus actifs et posterons des informations sur nos nouveautés, nos jeux, et nos futures directions de projet.
+    </p>
+    <p>
+        Pour l'instant, tout est encore en phase de lancement et nous avançons petit à petit. Rejoignez-nous pour suivre notre parcours et vous amuser !
+    </p>
+    <div class="contact-link">
+        <img src="https://img.icons8.com/color/48/discord-logo.png" alt="Discord">
+        <a href="https://discord.gg/invitelink" target="_blank">Rejoignez notre serveur Discord</a>
+    </div>
+    <div class="contact-link">
+        <img src="https://img.icons8.com/ios-filled/50/twitch.png" alt="Twitch">
+        <a href="https://twitch.tv/chaintwitch" target="_blank">Suivez-nous sur Twitch</a>
+    </div>
+    <div class="contact-link">
+        <img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube">
+        <a href="https://youtube.com/channel" target="_blank">Notre chaîne YouTube</a>
+    </div>-->
+</section>
+
+<!-- Section Jeux Vidéos -->
+<section id="jeux-videos">
+    <p>Il n'y a pas encore de jeux vidéos complètement finis, mais ils sont tous en préparation. Consultez l'onglet <a href="#" onclick="showSection('en-preparation')">"En Préparation"</a> pour plus de détails.</p>
+</section>
+
+<!-- Section Proposition -->
+<section id="proposition">
+    <div class="formulaire">
+        <p>Formulaire à venir. Restez à l'écoute !</p>
+    </div>
+</section>
+
+<!-- Section Qui Sommes Nous -->
+<section id="qui-sommes-nous">
+    <div class="content" id="Qui-sommes-nous">
+        <div class="about-us-container">
+            <div class="about-us-text">
+                <h3>Notre Histoire</h3>
+                <p>Nous sommes une équipe passionnée, dédiée à créer des expériences incroyables dans le monde des jeux vidéo. Notre parcours a commencé il y a plusieurs années avec une simple idée : offrir aux joueurs une immersion totale dans des univers fantastiques et captivants.</p>
+                <h3>Nos Valeurs</h3>
+                <p>Notre travail est guidé par des valeurs fortes : l'innovation, la créativité et l'intégrité. Nous croyons fermement que chaque jeu que nous créons devrait repousser les limites de l'imagination tout en offrant une expérience de jeu exceptionnelle.</p>
+                <h3>Nos Réseaux Sociaux</h3>
+                <div class="social-icons">
+                    <a href="https://discord.gg/RApu4wYFkU" target="_blank"><img src="D.jpg" alt="Discord"></a>
+                    <a href="https://www.twitch.tv/the_dark_industries" target="_blank"><img src="Twitch.jpg" alt="Twitch"></a>
+                    <a href="https://youtube.com/@tdi666?si=DUlpK0IwASQfwXc7" target="_blank"><img src="YouTube.jpg" alt="YouTube"></a>
+                    <!-- Ajoutez d'autres liens et icônes au besoin -->
+                </div>
+            </div>
+            <div class="about-us-image">
+                <img src="OK.webp" alt="About Us Image">
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Bas de page -->
+<footer>
+  <div class="social-icons">
+	<a href="https://discord.gg/TXz7TXPEyU" target="_blank"><img src="D.jpg" alt="Discord"></a>
+    <a href="lien_vers_profil_facebook" target="_blank"><img src="F.jpg" alt="Facebook"></a>
+    <a href="lien_vers_profil_insta" target="_blank"><img src="insta.jpg" alt="Instagram"></a>
+    <a href="lien_vers_profil_twitter" target="_blank"><img src="X.jpg" alt="Twitter"></a>
+    <!-- Ajoutez d'autres liens et icônes au besoin -->
+  </div>
+  <p class="advertisement">Page web générée par <a href="ok" target="_blank">CCS - CodeCraft Studio</a> - 2024</p>
+</footer>
+</body>
+</html>
