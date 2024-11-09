@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>	
+	<head>
+		<link rel="stylesheet" href="../Style/S2.css"/>
+			<title>Tentative de clique bouton</title>
+	</head>
+	<body>
+			<h1>COUCOU LES COPAINS</h1>
+			
+						<!-- Boutton pour rajouter des cliques  -->
+			<div style="text-align:center"> Clique sur le bouton :<br>				<!-- alignement au centre pour toute la division  -->
+			<input type="button" value="clique +" onclick="Clicked()"><br>			<!-- mise en palce du bouton   -->
+			Vous avez cliqué <input type="text" id="result" readonly="true">fois.</div>			<!-- mise en place du résultat et des paramètres du résultat  -->
+			
+			<!-- Script pour incrémenter le résultat -->
+		<script>
+			var THEbutton = 0 ;
+			function Clicked() {
+			THEbutton++;
+			document.getElementById('result').value=THEbutton;
+			}
+		</script>
+		
+		<!-- Script pour décrémenter le résultat -->
+		<script>
+		
+		function Clickedagain() {
+			if (THEbutton != 0){
+			THEbutton--;
+			document.getElementById('result').value=THEbutton;
+			}
+			}
+		</script>
+			<div style="text-align:center"> Clique sur le bouton :<br>				<!-- alignement au centre pour toute la division  -->
+			<input type="button" value="clique -" onclick="Clickedagain()"><br>			<!-- mise en palce du bouton   -->
+	</body>
+</html>	
