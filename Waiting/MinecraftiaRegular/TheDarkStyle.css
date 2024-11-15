@@ -1,0 +1,17 @@
+	@font-face {
+		font-family: 'MC';							/* Name of the Fonts. Can be Customisable. */
+		src: url('../Font/MinecraftiaRegular.ttf') format('truetype');		/* Source of the .ttf (the Font format)*/
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	/* Fonts usable for Minecraft Font : 'Minecraftia' , 'MCFont' , 'MC' */
+	
+	.MC {
+		font-family: 'MC';
+	}
+
+
+
+
+
