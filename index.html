@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheDarkIndustries</title>
+	<link rel="stylesheet" href="Ressources/style.css"/>
+</head>
+<body>
+<div class="background">
+        <img src="Ressources/Images/Head.jpeg" alt="Fond d'écran" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+<!-- En-tête -->
+<header> 
+    <div class="logo">
+        <img src="Ressources/Images/Logo.webp" alt="Logo" width="40" height="40">
+    </div>
+    <h1 class="try"><strong><p>TheDarkIndustries</strong></p></h1>
+</header>
+
+
+<!-- Barre de navigation -->
+<nav>
+    <a href="#" onclick="showSection('accueil')">Accueil</a>
+    <a href="#" onclick="showSection('jeux-videos')">Jeux Vidéo</a>
+    <a href="#" onclick="showSection('en-preparation')">En Préparation</a>
+    <a href="#" onclick="showSection('proposition')">Proposition</a>
+    <a href="#" onclick="showSection('contact')">Contact</a>
+	<a href="#" onclick="showSection('qui-sommes-nous')">Qui Sommes Nous ?</a>
+    
+</nav>
+
+<!-- Section Accueil -->
+<section id="accueil" class="active">
+    <div class="intro">
+        <h1>Bienvenue sur TheDarkIndustries</h1>
+        <p>Bonjour à toutes et à tous, ici vous retrouverez toutes les informations à savoir à propos de la Société que nous sommes entrain de faire naitre.</p>
+        
+		
+            Tableau des statistiques 
+            <h2>Vous pouvez voir actuellement quelques statistiques de nos projets :</h2>
+            
+<div class="table-container">
+    <div>
+        <table class="stats-table">
+            <thead>
+                <tr>
+                    <th>Nombre de jeux en cours de création</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlighted" id="years-existence">+4</td>
+                </tr>
+                <tr>
+                    <td class="description"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="divider"></div>
+    <div>
+        <table class="stats-table">
+            <thead>
+                <tr>
+                    <th>Nombre de jeux finis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlighted" id="national-sites">+0</td>
+                </tr>
+                <tr>
+                    <td class="description"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<div class="divider"></div>
+    <div>
+        <table class="stats-table">
+            <thead>
+                <tr>
+                    <th>Propositions d'idées par la communauté</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlighted" id="national-sites">+2</td>
+                </tr>
+                <tr>
+                    <td class="description"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+            <!-- Lien vers le serveur Discord -->
+            <div >
+        <button class="install-btn" onclick="installApp()">
+			<div class="contact-link">
+			<img src="https://img.icons8.com/color/48/discord-logo.png" alt="Discord">
+			<a href="https://discord.gg/RApu4wYFkU" target="_blank">Rejoignez notre serveur Discord</a>
+			</div>
+			
+	</button>
+    </div>
+            <div class="discord-stats">
+                Nombre de membres : <span id="discord-member-count">24</span> <!-- Nombre d'exemple -->
+            </div>
+
+            <!-- Navigation vers les autres sections -->
+            <p>Si vous voulez plus d'informations, n'hésitez pas à jeter un œil aux autres onglets comme :</p>
+		
+		
+		<div class="btn-group">
+            <button class="btn" onclick="showSection('jeux-videos')">Découvrir nos jeux vidéo</button>
+            <button class="btn" onclick="showSection('en-preparation')">Projets en préparation</button>
+        </div>
+    </div>
+</section>
+
+    <!-- Section En Préparation -->
+ <section id="en-preparation">
+    <div class="sections-container">
+        <div class="content">
+            <a href="#" onclick="openSidePanel('The Dark Stone')">The Dark Stone</a>
+            <h2>Prototypes</h2><br><br>
+            <div class="sections-container">
+
+                <div class="image-containerv2" onclick="openSidePanel('The Dark Stone')">
+                    <img src="Ressources/Images/the_dark_stone.webp" alt="The Dark Stone">
+                    <div class="hover-description">Un mystérieux artefact ancien.</div>
+                    <div class="overlay">
+                        <div class="text-content">
+                            <h1>Synopsis</h1>
+                            <p>THE DARK STONE</p>
+                            <h4 class="alignement">Créateur : Duwoye Jordan - Claire - Champlon Lucas</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-containerv2" onclick="openSidePanel('Personnage Principal')">
+                    <img src="Ressources/Images/PP.webp" alt="Personnage principal">
+                    <div class="hover-description">Le héros principal de l'histoire.</div>
+                    <!-- <div class="text111">Perso principal</div>-->
+                    <div class="overlayv2">
+                        <h2>Perso principal</h2>
+                    </div>
+                </div>
+
+                <div class="image-containerv2" onclick="openSidePanel('Mob')">
+                    <img src="Ressources/Images/Monstre_crabe_de_base.png" alt="Mob">
+                    <div class="hover-description">Un monstre féroce.</div>
+                   <!--  <div class="text111">Mob</div>-->
+                    <div class="overlayv2">
+                        <h2>Mob</h2>
+                    </div>
+                </div>
+
+                <div class="image-containerv2" onclick="openSidePanel('Armes')">
+                    <img src="Ressources/Images/arme plante.png" alt="Armes">
+                    <div class="hover-description">Des armes puissantes pour le combat.</div>
+                    <!-- <div class="text111">Armes</div>-->
+                    <div class="overlayv2">
+                        <h2>Armes</h2>
+                    </div>
+                </div>
+
+                <div class="image-containerv2" onclick="openSidePanel('Accessoires')">
+                    <img src="Ressources/Images/Pierre.png" alt="Accessoires/items">
+                    <div class="hover-description">Accessoires pour améliorer vos capacités.</div>
+                    <!-- <div class="text111">Accessoire/items</div>-->
+                    <div class="overlayv2">
+                        <h2>Accessoire/items</h2>
+                    </div>
+                </div>
+            </div>
+			<br><br><br><br><a href="#" onclick="openSidePanel('The Dark Stone')">Elements de décorations</a>
+            <h2>Prototypes</h2><br><br>
+        </div>
+
+        <div class="side-panel" id="sidePanel">
+            <span class="close-btn" onclick="closeSidePanel()">×</span>
+            <h2 id="projectTitle">Informations Complémentaires</h2>
+            <div id="projectDescription">
+                <p>Sélectionnez un projet dans la liste pour voir plus de détails.</p>
+            </div>
+            <div id="projectGallery" class="gallery-container">
+                <!-- Les images spécifiques au projet seront ajoutées ici dynamiquement -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Section Contact -->
+<section id="contact">
+<div class="container">
+        <img src="Ressources/Images/Logo.webp" alt="App Icon" class="app-icon">
+        <h1 class="app-title">TheDarkIndustries</h1>
+        <!--<p class="app-developer">Développeur: Dev Inc.</p>-->
+        
+		<p class="app-description">Bonjour à toutes et à tous,</p> <p class="app-description"> Nous avons le plaisir de vous présenter notre serveur Discord, un espace où nous serons très actifs et où nous partagerons régulièrement des informations sur les nouveautés de nos jeux ainsi que sur l’évolution de nos projets. Ce serveur a également pour but de rassembler une communauté grandissante pour profiter ensemble de nos activités. </p> <p class="app-description"> Nous en sommes encore à la phase de lancement, et bien que nous ne puissions pas encore nous y consacrer à plein temps, nous avançons progressivement. Nous nous excusons pour les éléments qui ne sont pas encore finalisés, mais soyez assurés que des améliorations arrivent petit à petit. Si notre parcours et nos projets vous intéressent, ou si vous voulez simplement vous divertir avec nous, rejoignez-nous sur le serveur 😉. </p> <p class="app-description"> À mesure que nos projets prendront de l’ampleur, nous organiserons des concours pour offrir des places exclusives à nos futurs bêtatesteurs. </p> <p class="app-description"> Vous avez sûrement remarqué que nous souhaitons également mettre en avant notre chaîne Twitch ! En effet, il s’agit de notre moyen d’interaction le plus direct avec vous. Nous y proposons du contenu divertissant en jouant aux jeux qui nous passionnent, alors n’hésitez pas à passer voir un live ou deux, ça nous fera plaisir 😉. </p> <p class="app-description"> Enfin, si vous ne pouvez pas assister aux lives, sachez que les rediffusions seront disponibles sur notre chaîne YouTube. Vous y trouverez aussi peut-être quelques extraits en short de nos meilleurs moments en direct (bien que ceux-ci soient publiés un peu moins régulièrement). </p>
+		
+        <button class="install-btn" onclick="installApp()">
+			<div class="contact-link">
+			<img src="https://img.icons8.com/color/48/discord-logo.png" alt="Discord">
+			<a href="https://discord.gg/RApu4wYFkU" target="_blank">Rejoignez notre serveur Discord</a>
+			</div>
+			
+			<div class="contact-link">
+			<img src="https://img.icons8.com/ios-filled/50/twitch.png" alt="Twitch">
+			<a href="https://www.twitch.tv/the_dark_industries" target="_blank">Suivez-nous sur Twitch</a>
+			</div>
+			
+			<div class="contact-link">
+			<img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube">
+			<a href="https://youtube.com/@tdi666?si=DUlpK0IwASQfwXc7" target="_blank">Notre chaîne YouTube</a>
+			</div>
+	</button>
+    </div>
+
+</section>
+
+<!-- Section Jeux Vidéos -->
+<section id="jeux-videos">
+    <div class="content">
+        <p>Il n'y a pas encore de jeux vidéos complètement finis, mais ils sont tous en préparation. <br>Consultez l'onglet <a href="#" onclick="showSection('en-preparation')" style="color: #ffffff; text-decoration: none;">"En Préparation"</a> pour plus de détails.</p>
+        
+        <!-- Animation Coming Soon -->
+        <div class="coming-soon glow">
+            <span>Coming Soon</span>
+            <!--<div class="dot-flashing"></div>-->
+        </div>
+    </div>
+</section>
+
+<!-- Section Proposition 
+<section id="proposition">
+    <div class="formulaire">
+        <p>Formulaire à venir. Restez à l'écoute !</p>
+    </div>
+</section><!-- Section Proposition -->
+<section id="proposition">
+    <div class="formulaire">
+        <!-- Logo et titre -->
+        
+        
+        <!-- Formulaire -->
+        <form id="propositionForm">
+            <!-- Choix avec cases à cocher -->
+            <fieldset>
+                <legend>Choisissez une catégorie *</legend>
+                <div>
+                    <input type="radio" id="gameProposal" name="category" value="gameProposal" required>
+                    <label for="gameProposal">Proposition de jeux</label>
+                </div>
+                <div>
+                    <input type="radio" id="easterEggProposal" name="category" value="easterEggProposal">
+                    <label for="easterEggProposal">Proposition d'easter egg</label>
+                </div>
+                <div>
+                    <input type="radio" id="request" name="category" value="request">
+                    <label for="request">Demande envers la TheDarkIndustries</label>
+                </div>
+                <div>
+                    <input type="radio" id="other" name="category" value="other">
+                    <label for="other">Autres</label>
+                </div>
+            </fieldset>
+            
+            <!-- Objet du mail -->
+            <div style="margin-top: 20px;">
+                <label for="mailSubject">Objet de votre demande *</label><br>
+                <input type="text" id="mailSubject" name="mailSubject" required placeholder="Objet de votre demande" style="width: 100%; padding: 8px;">
+            </div>
+            
+            <!-- Corps du mail -->
+            <div style="margin-top: 20px;">
+                <label for="mailBody">Explications plus amples</label><br>
+                <textarea id="mailBody" name="mailBody" rows="6" placeholder="Explications plus amples" style="width: 100%; padding: 8px;"></textarea>
+            </div>
+            
+            <!-- Adresse mail -->
+            <div style="margin-top: 20px;">
+                <label for="email">Mail pour vous recontacter *</label><br>
+                <input type="email" id="email" name="email" required placeholder="Votre adresse mail" style="width: 100%; padding: 8px;">
+            </div>
+            
+            <!-- Bouton d'envoi -->
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit" style="padding: 10px 20px;">Envoyer</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+<!-- Section Qui Sommes Nous -->
+<section id="qui-sommes-nous">
+    <div class="content" id="Qui-sommes-nous">
+        <div class="about-us-container">
+            <div class="about-us-text">
+                <!--<p>Notre Histoire</p>-->
+                <p>Nous sommes deux à l'origine de ce projet, celui de créer notre propre entreprise de jeux vidéo. Bien que nous ne soyons pas encore nombreux et que nous n'ayons pas encore la possibilité de nous lancer pleinement dans cette aventure, nous restons déterminés à devenir ceux qui vous feront frémir devant leurs jeux vidéo. Nous travaillerons sur des jeux de tous types : énigmes, horreur, plateforme, visual novel, et bien d'autres encore.<p>
+				<p>Notre objectif est de faire vivre d'innombrables expériences à travers nos jeux. C'est pourquoi nous vous recommandons vivement de suivre l'avancement de ceux-ci, notamment sur notre serveur Discord où nous publierons fréquemment des nouvelles à propos de nos projets.</p>
+                <p>Avant d'être des programmeurs et de tenter de lancer notre entreprise de jeux vidéo, nous sommes avant tout des joueurs depuis notre enfance. C'est pourquoi nous souhaitons offrir une expérience aussi plaisante que possible à nos joueurs, ayant tous déjà été confrontés à un jeu frôlant la perfection mais décevant sur de petits détails. Nous sommes également actifs sur YouTube et Twitch, où nous partageons notre passion pour les jeux vidéo et notre humour (pas toujours fou, mais authentique). L'objectif de notre entreprise est de partager des émotions et des expériences avec tous.</p>
+                <p>Actuellement, nous essayons de recruter un maximum de personnes sur notre Discord afin de tenir un large public informé de nos avancées et de nos objectifs. Si vous souhaitez en faire partie, n'hésitez pas à nous rejoindre !</p>
+                <div class="social-icons">
+                    <a href="https://discord.gg/RApu4wYFkU" target="_blank"><img src="Ressources/Images/Discord.jpg" alt="Discord"></a>
+                    <a href="https://www.twitch.tv/the_dark_industries" target="_blank"><img src="Ressources/Images/Twitch.jpg" alt="Twitch"></a>
+                    <a href="https://youtube.com/@tdi666?si=DUlpK0IwASQfwXc7" target="_blank"><img src="Ressources/Images/YouTube.jpg" alt="YouTube"></a>
+                    <!-- Ajoutez d'autres liens et icônes au besoin -->
+                </div>
+            </div>
+            <div class="about-us-image">
+                <img src="Ressources/Images/Logo.webp" alt="About Us Image">
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Bas de page -->
+<footer>
+  <div class="social-icons">
+	<a href="https://discord.gg/TXz7TXPEyU" target="_blank"><img src="Ressources/Images/Discord.jpg" alt="Discord"></a>
+
+  </div>
+  <p class="advertisement">Page web générée par <a href="ok" target="_blank">CCS - CodeCraft Studio</a> - 2024</p>
+</footer>
+<script src="Ressources/script.js"></script>
+</body>
+</html>
